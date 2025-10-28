@@ -22,7 +22,6 @@ function Home() {
             >
                 <h1 className="font-serif text-5xl font-bold md:text-7xl dark:text-white">
                     Capturing Life's <br />
-                    Precious Moments
                     <br />
                     <span className="text-accent">Beautiful Moments</span>
                 </h1>
