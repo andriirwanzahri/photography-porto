@@ -9,7 +9,7 @@ function Home() {
         <section className="relative flex h-[90vh] items-center justify-center overflow-hidden">
             <img
                 src={HeroImage}
-                alt="Professional Photography"
+                alt="Covered Bridge"
                 className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-linear-to-br" />
@@ -21,7 +21,8 @@ function Home() {
                 className="relative z-10 space-y-6 px-4 text-center"
             >
                 <h1 className="font-serif text-5xl font-bold md:text-7xl dark:text-white">
-                    Capturing Life's
+                    Capturing Life's <br />
+                    Precious Moments
                     <br />
                     <span className="text-accent">Beautiful Moments</span>
                 </h1>
