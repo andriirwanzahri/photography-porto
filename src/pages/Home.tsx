@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import { Button } from '@components/ui/Button'
 import { Link } from 'react-router'
 import { motion } from 'motion/react'
-import HeroImage from '@/assets/HeroPrewed.jpg'
+import HeroImage from '@/assets/01.jpg'
 
 function Home() {
     return (
@@ -12,7 +12,7 @@ function Home() {
                 alt="Covered Bridge"
                 className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-linear-to-br" />
+            <div className="absolute inset-0 bg-linear-to-bl/oklch from-cyan-500/10 to-amber-300/50 dark:from-amber-500/10 dark:to-gray-400/50" />
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
