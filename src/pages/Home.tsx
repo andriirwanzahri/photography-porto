@@ -12,7 +12,7 @@ function Home() {
                 alt="Covered Bridge"
                 className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-linear-to-br" />
+            <div className="from-background/70 via-background/80 to-background/70 bg-gradient dark: absolute inset-0" />
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -20,13 +20,12 @@ function Home() {
                 transition={{ duration: 0.8 }}
                 className="relative z-10 space-y-6 px-4 text-center"
             >
-                <h1 className="font-serif text-5xl font-bold md:text-7xl dark:text-white">
-                    Capturing Life's <br />
-                    Precious Moments
+                <h1 className="font-serif text-5xl font-bold md:text-7xl">
+                    Capturing Life's
                     <br />
                     <span className="text-accent">Beautiful Moments</span>
                 </h1>
-                <p className="text-muted-foreground mx-auto max-w-2xl text-lg md:text-xl dark:text-gray-300">
+                <p className="text-muted-foreground mx-auto max-w-2xl text-lg md:text-xl">
                     Professional photography services for weddings, portraits,
                     and special events. Creating timeless memories with artistic
                     vision.
