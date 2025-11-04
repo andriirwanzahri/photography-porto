@@ -8,7 +8,7 @@ interface MainTemplateProps {
 
 const MainTemplate = ({ children }: MainTemplateProps) => {
     return (
-        <div className="flex min-h-screen flex-col dark:bg-gray-950">
+        <div className="dark:bg-background flex min-h-screen flex-col">
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />

@@ -5,13 +5,6 @@ import { ArrowRight } from 'lucide-react'
 import HeroImage from '@/assets/01.jpg'
 import Profile from '@/assets/02.jpg'
 import { Button } from '@/components/atoms/button/Button'
-import AnimatedCounter from '@/components/atoms/AnimatedCounter'
-
-const stats = [
-    { number: 500, label: 'Projects' },
-    { number: 10, label: 'Years' },
-    { number: 300, label: 'Clients' },
-]
 
 const Hero = () => {
     const { scrollY } = useScroll()
@@ -27,7 +20,7 @@ const Hero = () => {
                     alt="Wedding Photography Background"
                     className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-bl from-cyan-500/10 to-gray-100 dark:from-amber-500/10 dark:to-gray-900" />
+                <div className="absolute inset-0 bg-linear-to-bl from-gray-100/10 to-gray-100 dark:from-gray-900/10 dark:to-gray-900" />
             </motion.div>
 
             <div className="relative z-10 flex h-screen items-center">
@@ -63,24 +56,6 @@ const Hero = () => {
                                 memories with artistic vision and passion.
                             </motion.p>
 
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.9 }}
-                                className="grid w-full max-w-md grid-cols-3 gap-6 pt-4 sm:gap-8"
-                            >
-                                {stats.map((stat, i) => (
-                                    <div
-                                        key={i}
-                                        className="text-center lg:text-left"
-                                    >
-                                        <AnimatedCounter
-                                            target={stat.number}
-                                            label={stat.label}
-                                        />
-                                    </div>
-                                ))}
-                            </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
