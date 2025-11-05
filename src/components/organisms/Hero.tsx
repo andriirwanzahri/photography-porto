@@ -20,11 +20,12 @@ const Hero = () => {
                     alt="Wedding Photography Background"
                     className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-bl from-gray-100/10 to-gray-100 dark:from-gray-900/10 dark:to-gray-900" />
+                <div className="absolute inset-0 bg-linear-to-t from-gray-100 from-10% via-gray-100 via-30% to-gray-100/10 to-90% dark:from-gray-900 dark:via-gray-900 dark:to-gray-900/10" />
+                {/* bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% */}
             </motion.div>
 
             <div className="relative z-10 flex h-screen items-center">
-                <div className="container mx-auto px-4 md:px-8">
+                <div className="mx-auto px-4 md:px-8">
                     <div className="grid items-center gap-10 md:gap-16 lg:grid-cols-2">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -107,7 +108,7 @@ const Hero = () => {
                                 >
                                     <img
                                         src={Profile}
-                                        alt="Professional Photographer"
+                                        alt="Professional Photographer Wedding"
                                         className="h-full w-full object-cover"
                                     />
                                 </motion.div>
