@@ -1,5 +1,5 @@
-import AboutIntro from '@/components/organisms/AboutIntro'
-import Hero from '@/components/organisms/Hero'
+import AboutIntro from '@/components/organisms/home/AboutIntro'
+import Hero from '@/components/organisms/home/Hero'
 import MainTemplate from '@/components/templates/MainTemplate'
 
 function Home() {
