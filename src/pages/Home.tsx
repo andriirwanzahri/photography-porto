@@ -1,11 +1,10 @@
-import { ArrowRight } from 'lucide-react'
-import { Button } from '@components/ui/Button'
-import { Link } from 'react-router'
-import { motion } from 'motion/react'
-import HeroImage from '@/assets/HeroPrewed.jpg'
+import AboutIntro from '@/components/organisms/home/AboutIntro'
+import Hero from '@/components/organisms/home/Hero'
+import MainTemplate from '@/components/templates/MainTemplate'
 
 function Home() {
     return (
+<<<<<<< HEAD
         <section className="relative flex h-[90vh] items-center justify-center overflow-hidden">
             <img
                 src={HeroImage}
@@ -44,6 +43,12 @@ function Home() {
                 </div>
             </motion.div>
         </section>
+=======
+        <MainTemplate>
+            <Hero />
+            <AboutIntro />
+        </MainTemplate>
+>>>>>>> af1f91f79bccb0071feb3a8b9eee1ae81882d590
     )
 }
 
