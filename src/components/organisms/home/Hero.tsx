@@ -20,8 +20,7 @@ const Hero = () => {
                     alt="Wedding Photography Background"
                     className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-gray-100 from-10% via-gray-100 via-30% to-gray-100/10 to-90% dark:from-gray-900 dark:via-gray-900 dark:to-gray-900/10" />
-                {/* bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% */}
+                <div className="from-background via-background to-background/10 dark:from-background dark:via-background dark:to-background/10 absolute inset-0 bg-linear-to-t from-10% via-30% to-90%" />
             </motion.div>
 
             <div className="relative z-10 flex h-screen items-center">
