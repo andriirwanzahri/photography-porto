@@ -5,90 +5,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-<<<<<<< HEAD
-@theme {
-  /* 🌞 Light */
-  --color-background: #f7f7f8;
-  --color-foreground: #262626;
-
-  --color-card: #ffffff;
-  --color-card-foreground: #262626;
-
-  --color-popover: #ffffff;
-  --color-popover-foreground: #262626;
-
-  --color-primary: #333333;
-  --color-primary-foreground: #fafafa;
-
-  --color-secondary: #f2f2f2;
-  --color-secondary-foreground: #333333;
-
-  --color-muted: #ededed;
-  --color-muted-foreground: #737373;
-
-  --color-accent: #f8b400;
-  --color-accent-foreground: #fafafa;
-
-  --color-destructive: #e63946;
-  --color-destructive-foreground: #fafafa;
-
-  --color-border: #e6e6e6;
-  --color-input: #e6e6e6;
-  --color-ring: #333333;
-
-  --radius: 0.5rem;
-
-  --color-sidebar-background: #fafafa;
-  --color-sidebar-foreground: #333333;
-  --color-sidebar-primary: #333333;
-  --color-sidebar-primary-foreground: #fafafa;
-  --color-sidebar-accent: #f2f2f2;
-  --color-sidebar-accent-foreground: #333333;
-  --color-sidebar-border: #e6e6e6;
-  --color-sidebar-ring: #333333;
-}
-
-/* Dark Mode*/
-.dark {
-  --color-background: #1a1a1a;
-  --color-foreground: #f2f2f2;
-
-  --color-card: #1f1f1f;
-  --color-card-foreground: #f2f2f2;
-
-  --color-popover: #1f1f1f;
-  --color-popover-foreground: #f2f2f2;
-
-  --color-primary: #f2f2f2;
-  --color-primary-foreground: #1a1a1a;
-
-  --color-secondary: #2e2e2e;
-  --color-secondary-foreground: #f2f2f2;
-
-  --color-muted: #2e2e2e;
-  --color-muted-foreground: #999999;
-
-  --color-accent: #f8b400;
-  --color-accent-foreground: #1a1a1a;
-
-  --color-destructive: #8c1c1c;
-  --color-destructive-foreground: #fafafa;
-
-  --color-border: #333333;
-  --color-input: #333333;
-  --color-ring: #f2f2f2;
-
-  --color-sidebar-background: #1a1a1a;
-  --color-sidebar-foreground: #f2f2f2;
-  --color-sidebar-primary: #f2f2f2;
-  --color-sidebar-primary-foreground: #1a1a1a;
-  --color-sidebar-accent: #2e2e2e;
-  --color-sidebar-accent-foreground: #f2f2f2;
-  --color-sidebar-border: #333333;
-  --color-sidebar-ring: #f2f2f2;
-}
-
-=======
 @custom-variant fixed (&:is(.layout-fixed *));
 
 @theme inline{
@@ -141,7 +57,6 @@
   --sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --sidebar-border: var(--sidebar-border);
   --sidebar-ring: var(--sidebar-ring);
->>>>>>> af1f91f79bccb0071feb3a8b9eee1ae81882d590
 
 
 }
