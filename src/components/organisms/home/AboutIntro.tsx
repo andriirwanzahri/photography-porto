@@ -2,6 +2,7 @@ import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import AnimatedCounter from '@/components/atoms/AnimatedCounter'
 import {
+    cardSlideInUp,
     fadeIn,
     fadeUp,
     slideInLeft,
@@ -20,6 +21,7 @@ import { Button } from '@/components/atoms/button/Button'
 const stats = [
     { number: 500, label: 'Projects' },
     { number: 10, label: 'Years' },
+    { number: 300, label: 'Clients' },
     { number: 300, label: 'Clients' },
 ]
 
@@ -61,11 +63,11 @@ function AboutIntro() {
             ref={sectionRef}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="relative container mx-auto overflow-hidden py-20 md:py-28"
+            className="relative container overflow-hidden py-20 md:py-28"
         >
             <motion.div
                 variants={staggerContainer}
-                className="text-primary container mb-16 flex flex-col items-center"
+                className="text-primary mb-16 flex flex-col items-center"
             >
                 <MotionH1
                     variants={fadeUp}
@@ -86,9 +88,8 @@ function AboutIntro() {
             {/* Stat element */}
             <motion.div
                 variants={staggerContainer}
-                className="mt-12 grid grid-cols-1 gap-8 px-52 sm:grid-cols-3 md:mt-16"
+                className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4 md:mt-16"
             >
-                {/* <div className="col-span-2"></div> */}
                 {stats.map((stat, i) => (
                     <motion.div
                         key={i}
@@ -161,15 +162,17 @@ function AboutIntro() {
                     </MotionInView>
                 </motion.div>
             </motion.div>
+
             {/* casd */}
-            <MotionInView className="mt-24 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <MotionInView
+                variants={staggerContainer}
+                className="mt-24 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+            >
                 {features.map((feature, i) => (
-                    <motion.div
+                    <MotionInView
                         key={i}
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: i * 0.2 }}
-                        className="group hover:shadow-primary/10 border/10 from-foreground/50 to-foreground/40 relative flex flex-col items-center rounded-2xl border bg-linear-to-b p-8 text-center shadow-md backdrop-blur-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
+                        variants={cardSlideInUp(i)}
+                        className="group hover:shadow-primary/10 border/10 from-card to-card relative flex flex-col items-center rounded-lg border bg-linear-to-b p-8 text-center shadow-md backdrop-blur-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
                     >
                         <div className="bg-primary/10 group-hover:bg-primary/20 mb-5 flex h-16 w-16 items-center justify-center rounded-full transition-colors duration-300">
                             {feature.icon}
@@ -180,7 +183,7 @@ function AboutIntro() {
                         <p className="text-secondary-foreground/80 text-sm">
                             {feature.description}
                         </p>
-                    </motion.div>
+                    </MotionInView>
                 ))}
             </MotionInView>
         </motion.section>

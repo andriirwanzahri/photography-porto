@@ -10,8 +10,8 @@ function Header() {
 
     return (
         <>
-            <header className="sticky top-0 z-50 w-full border-gray-200/10 bg-white/70 shadow-sm backdrop-blur-sm transition-all duration-300 dark:border-gray-700/10 dark:bg-gray-900/60 dark:text-white">
-                <div className="container mx-auto flex h-16 items-center justify-between px-4">
+            <header className="bg-secondary/70 sticky top-0 z-50 w-full border-gray-200/10 shadow-sm backdrop-blur-sm transition-all duration-300 dark:border-gray-700/10 dark:bg-gray-900/60 dark:text-white">
+                <div className="container flex h-16 items-center justify-between">
                     <Link to="/">
                         <Logo />
                     </Link>
