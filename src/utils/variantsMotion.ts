@@ -55,9 +55,6 @@ export const slideInRight: Variants = {
     },
 }
 
- // initial={{ opacity: 0, y: 40 }}
-                        // animate={{ opacity: 1, y: 0 }}
-                        // transition={{ duration: 0.6, delay: i * 0.2 }}
 export const cardSlideInUp= (i: number):Variants => ({
     hidden: {
         opacity: 0,

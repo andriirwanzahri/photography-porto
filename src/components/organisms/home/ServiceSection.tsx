@@ -1,5 +1,4 @@
-import { motion, useInView } from 'motion/react'
-import { useRef } from 'react'
+import { motion } from 'motion/react'
 import {
     cardSlideInUp,
     fadeIn,
@@ -12,8 +11,7 @@ import MotionInView from '@/components/motion/MotionInView'
 import { MotionH1 } from '@/components/motion/MotionH1'
 import { MotionP } from '@/components/motion/MotionP'
 import { Camera, FileText, Image, MapPin } from 'lucide-react'
-// import { Link } from 'react-router'
-// import { Button } from '@/components/atoms/button/Button'
+import MotionSection from '@/components/motion/MotionSection'
 
 const features = [
     {
@@ -41,20 +39,8 @@ const features = [
 ]
 
 function ServicesSection() {
-    const sectionRef = useRef(null)
-    const isInView = useInView(sectionRef, {
-        once: true,
-        margin: '-100px',
-        amount: 0.5,
-    })
-
     return (
-        <motion.section
-            ref={sectionRef}
-            initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
-            className="bg-secondary relative container mx-auto overflow-hidden py-20 md:py-28"
-        >
+        <MotionSection className="bg-secondary relative container mx-auto overflow-hidden py-20 md:py-28">
             <motion.div
                 variants={staggerContainer}
                 className="mb-16 flex flex-col items-center"
@@ -95,7 +81,7 @@ function ServicesSection() {
                     </MotionInView>
                 ))}
             </MotionInView>
-        </motion.section>
+        </MotionSection>
     )
 }
 
