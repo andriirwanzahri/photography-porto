@@ -1,9 +1,5 @@
 import { Route, Routes } from 'react-router'
 
-// component imports
-import Header from './components/organisms/Header'
-import Footer from './components/organisms/Footer'
-
 // pages imports
 import Home from './pages/Home'
 import Gallery from './pages/Gallery'
@@ -15,23 +11,16 @@ import NotFound from './pages/NotFound'
 
 function App() {
     return (
-        <div className="flex min-h-screen flex-col dark:bg-gray-950">
-            <Header />
-            <main className="flex-1">
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/gallery" element={<Gallery />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/booking" element={<Booking />} />
-                    <Route
-                        path="/client/:clientName"
-                        element={<ClientDetail />}
-                    />
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
-            </main>
-            <Footer />
+        <div className="[&::-webkit-scrollbar-thumb]:bg-secondary-foreground max-h-screen overflow-y-auto [&::-webkit-scrollbar]:w-2 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-track]:bg-gray-100 dark:[&::-webkit-scrollbar-track]:bg-neutral-700">
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/booking" element={<Booking />} />
+                <Route path="/client/:clientName" element={<ClientDetail />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
         </div>
     )
 }
