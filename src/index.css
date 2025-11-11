@@ -81,7 +81,7 @@
   --muted: oklch(94.5% 0.002 264);
   --muted-foreground: oklch(54% 0.003 264);
   
-  --accent: oklch(79% 0.14 85);
+  --accent: oklch(81.79% 0.17046 77.947);
   --accent-foreground: oklch(98.5% 0.001 264);
   
   --destructive: oklch(55% 0.22 15);
@@ -128,7 +128,7 @@
   --muted: oklch(30% 0.003 264);
   --muted-foreground: oklch(68% 0.003 264);
   
-  --accent: oklch(79% 0.14 85);
+  --accent: oklch(81.79% 0.17046 77.947);
   --accent-foreground: oklch(19% 0.003 264);
   
   --destructive: oklch(36% 0.15 15);
@@ -207,7 +207,7 @@
 }
 
 @utility section-soft {
-  @apply from-background to-surface/40 dark:bg-background 3xl:fixed:bg-none bg-gradient-to-b;
+  @apply from-background to-surface/40 dark:bg-background 3xl:fixed:bg-none bg-linear-to-b;
 }
 
 @utility theme-container {
@@ -219,13 +219,13 @@
 } 
 
  @utility container {
-  @apply 3xl:max-w-screen-2xl mx-auto max-w-[1400px] px-4 lg:px-8;
+  @apply 3xl:max-w-screen-2xl mx-auto max-w-[1400px] px-8 lg:px-16;
 }
 
 @utility no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-
+  
   &::-webkit-scrollbar {
     display: none;
   }
