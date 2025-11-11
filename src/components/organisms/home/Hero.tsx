@@ -10,7 +10,7 @@ const Hero = () => {
     const { scrollY } = useScroll()
     const y = useTransform(scrollY, [0, 300], [0, 120])
     return (
-        <section className="bg-background relative container flex min-h-screen items-center justify-center overflow-hidden">
+        <section className="bg-background relative flex min-h-screen items-center justify-center overflow-hidden">
             <motion.div
                 style={{ y }}
                 className="absolute inset-0 z-0 will-change-transform"
@@ -23,7 +23,7 @@ const Hero = () => {
                 <div className="from-background via-background to-background/10 dark:from-background dark:via-background dark:to-background/10 absolute inset-0 bg-linear-to-t from-10% via-30% to-90%" />
             </motion.div>
 
-            <div className="relative z-10 flex h-screen items-center">
+            <div className="relative z-10 container flex h-screen items-center">
                 <div className="grid items-center gap-10 md:gap-16 lg:grid-cols-2">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
