@@ -2,9 +2,8 @@ import { MotionH1 } from '@/components/motion/MotionH1'
 import MotionInView from '@/components/motion/MotionInView'
 import { MotionP } from '@/components/motion/MotionP'
 import MotionSection from '@/components/motion/MotionSection'
-import { fadeIn } from '@/utils/variantsMotion'
-import { galleryData } from '@/data/galleryApi'
-import gambar from '@/assets/images/gallery/02.jpg'
+import { cardSlideInUp, fadeIn, staggerContainer } from '@/utils/variantsMotion'
+import { galleryData } from 'data/galleryApi'
 import { Button } from '@/components/atoms/button/Button'
 import { Link } from 'react-router'
 
@@ -25,15 +24,24 @@ function FeaturedWork() {
                     Beberapa karya terbaik kami dalam mengabadikan momen spesial
                     klien
                 </MotionP>
-                <MotionInView className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {galleryData.map((data) => (
-                        <MotionInView className="group relative aspect-4/5 cursor-pointer overflow-hidden rounded-lg">
+                <MotionInView
+                    variants={staggerContainer}
+                    className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+                >
+                    {galleryData.map((data, i) => (
+                        <MotionInView
+                            variants={cardSlideInUp(i)}
+                            className="group relative aspect-4/5 cursor-pointer overflow-hidden rounded-lg"
+                        >
                             <img
-                                src={gambar}
-                                alt=""
+                                src={data.image}
+                                alt={data.title}
                                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                            <div className="bg-background/90 text-primary absolute top-4 right-4 rounded-lg px-3 py-0.5 text-sm font-medium uppercase shadow-md">
+                                <span>{data.category}</span>
+                            </div>
                             <div className="absolute right-0 bottom-0 left-0 translate-y-full transform p-6 text-white transition-transform group-hover:translate-y-0">
                                 <h3 className="font-serif text-xl font-semibold">
                                     {data.title}

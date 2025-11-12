@@ -7,7 +7,7 @@ export const galleryData = [
         date: '18 Januari 2025',
         couple: 'Nia & Yusda',
         location: 'Panton Labu, Aceh, Indonesia',
-        image: '/images/gallery/wedding-1.jpg',
+        image: '/images/gallery/03.jpg',
     },
     {
         id: '2',
@@ -17,7 +17,7 @@ export const galleryData = [
         date: '7 Januari 2025',
         couple: 'Nazira & Rahmad',
         location: 'Panton Labu, Aceh, Indonesia',
-        image: '02.jpg',
+        image: '/images/gallery/02.jpg',
     },
     {
         id: '3',
@@ -27,7 +27,7 @@ export const galleryData = [
         date: '16 Oktober 2023',
         couple: 'Mardian & Lisa',
         location: 'Panton Labu, Aceh, Indonesia',
-        image: '/images/gallery/engagement-1.jpg',
+        image: '/images/gallery/04.jpg',
     },
     {
         id: '4',
@@ -37,7 +37,7 @@ export const galleryData = [
         date: '20 Februari 2025',
         couple: 'Dian & Reza',
         location: 'Banda Aceh, Indonesia',
-        image: '/images/gallery/prewedding-2.jpg',
+        image: '/images/gallery/05.jpg',
     },
     {
         id: '5',
@@ -47,7 +47,7 @@ export const galleryData = [
         date: '25 Desember 2024',
         couple: 'Ayu & Fajar',
         location: 'Lhokseumawe, Aceh, Indonesia',
-        image: '/images/gallery/wedding-2.jpg',
+        image: '/images/gallery/03.jpg',
     },
     {
         id: '6',
@@ -57,6 +57,6 @@ export const galleryData = [
         date: '12 September 2024',
         couple: 'Rizky & Wulan',
         location: 'Langsa, Aceh, Indonesia',
-        image: '/images/gallery/engagement-2.jpg',
+        image: '/images/gallery/04.jpg',
     },
 ]
