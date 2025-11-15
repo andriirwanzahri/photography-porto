@@ -3,11 +3,39 @@ import MotionInView from '@/components/motion/MotionInView'
 import { MotionP } from '@/components/motion/MotionP'
 import MotionSection from '@/components/motion/MotionSection'
 import { cardSlideInUp, fadeIn, staggerContainer } from '@/utils/variantsMotion'
-import { galleryData } from 'data/galleryApi'
 import { Button } from '@/components/atoms/button/Button'
 import { Link } from 'react-router'
+import { useQuery } from '@tanstack/react-query'
+import { getDataGallery } from '@/services/getDataGallery'
+
+interface galleryProps {
+    id: number
+    title: string
+    subtitle: string
+    date: string
+    couple: string
+    category: string
+    location: string
+    image: string
+}
 
 function FeaturedWork() {
+    const {
+        data: galleryData,
+        isPending,
+        error,
+    } = useQuery({
+        queryKey: ['galleryData'],
+        queryFn: getDataGallery,
+    })
+
+    if (isPending) {
+        return <div>Loading...</div>
+    }
+    if (error) {
+        return <div>Error loading gallery data</div>
+    }
+
     return (
         <MotionSection>
             <MotionInView>
@@ -28,9 +56,9 @@ function FeaturedWork() {
                     variants={staggerContainer}
                     className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
                 >
-                    {galleryData.map((data, i) => (
+                    {galleryData.map((data: galleryProps) => (
                         <MotionInView
-                            variants={cardSlideInUp(i)}
+                            variants={cardSlideInUp(data.id)}
                             className="group relative aspect-4/5 cursor-pointer overflow-hidden rounded-lg"
                         >
                             <img
