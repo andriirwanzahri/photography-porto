@@ -6,6 +6,7 @@ import { fadeIn, fadeUp, staggerContainer } from '@/utils/variantsMotion'
 import { useQuery } from '@tanstack/react-query'
 import { faqData } from '@/services/faqData'
 import type { IFaqProps } from '@/index'
+import HeroSkeleton from '@/components/skeletons/HeroSkeleton'
 
 function FaqSection() {
     const {
@@ -43,22 +44,27 @@ function FaqSection() {
                 </MotionInView>
 
                 {/* Accordion component  */}
-                {Faqs.map((faq: IFaqProps, i: number) => (
-                    <MotionInView
-                        key={i}
-                        variants={fadeIn}
-                        className="mx-auto mb-4 max-w-3xl"
-                    >
-                        <details className="group border-b border-gray-300 pb-4">
-                            <summary className="text-primary/90 group-open:text-secondary-foreground/90 cursor-pointer list-none text-lg font-medium">
-                                {faq.question}
-                            </summary>
-                            <p className="text-secondary-foreground/80 mt-2">
-                                {faq.answer}
-                            </p>
-                        </details>
-                    </MotionInView>
-                ))}
+
+                {isPending ? (
+                    <HeroSkeleton />
+                ) : (
+                    Faqs.map((faq: IFaqProps, i: number) => (
+                        <MotionInView
+                            key={i}
+                            variants={fadeIn}
+                            className="mx-auto mb-4 max-w-3xl"
+                        >
+                            <details className="group border-b border-gray-300 pb-4">
+                                <summary className="text-primary/90 group-open:text-secondary-foreground/90 cursor-pointer list-none text-lg font-medium">
+                                    {faq.question}
+                                </summary>
+                                <p className="text-secondary-foreground/80 mt-2">
+                                    {faq.answer}
+                                </p>
+                            </details>
+                        </MotionInView>
+                    ))
+                )}
             </MotionInView>
         </MotionSection>
     )

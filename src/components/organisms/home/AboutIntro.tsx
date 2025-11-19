@@ -17,6 +17,7 @@ import { Camera, FileText, Image, MapPin } from 'lucide-react'
 import { Link } from 'react-router'
 import { Button } from '@/components/atoms/button/Button'
 import MotionSection from '@/components/motion/MotionSection'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const stats = [
     { number: 500, label: 'Projects' },
@@ -102,10 +103,16 @@ function AboutIntro() {
                     variants={slideInLeft}
                     className="aspect-4/5 max-h-[350px] w-full max-w-[650px] overflow-hidden rounded-lg"
                 >
-                    <img
+                    {/* <img
                         src={HeroImage}
                         alt="Wedding Photography Background"
                         className="h-full w-full object-cover"
+                    /> */}
+                    <LazyLoadImage
+                        src={HeroImage}
+                        alt="Wedding Photography Background"
+                        className="h-full w-full object-cover"
+                        effect="blur"
                     />
                 </MotionInView>
                 {/* // Pengalaman */}

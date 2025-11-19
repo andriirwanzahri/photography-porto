@@ -3,6 +3,7 @@ import MotionInView from '../motion/MotionInView'
 import { Button } from '../atoms/button/Button'
 import { Link } from 'react-router'
 import type { IGalleryProps } from '@/index'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 function CardImage({ id, title, image, category, location }: IGalleryProps) {
     return (
@@ -11,7 +12,7 @@ function CardImage({ id, title, image, category, location }: IGalleryProps) {
             variants={cardSlideInUp(id)}
             className="group relative aspect-4/5 cursor-pointer overflow-hidden rounded-lg"
         >
-            <img
+            <LazyLoadImage
                 src={image}
                 alt={title}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"

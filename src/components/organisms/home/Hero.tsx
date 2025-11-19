@@ -13,12 +13,13 @@ import {
     visibleVariansFadeInX,
 } from '@/utils/variantsMotion'
 import { MotionP } from '@/components/motion/MotionP'
+import MotionSection from '@/components/motion/MotionSection'
 
 const Hero = () => {
     const { scrollY } = useScroll()
     const y = useTransform(scrollY, [0, 300], [0, 120])
     return (
-        <section className="bg-background relative flex min-h-screen items-center justify-center overflow-hidden">
+        <MotionSection className="bg-background relative flex min-h-screen items-center justify-center overflow-hidden">
             <MotionInView
                 style={{ y }}
                 className="absolute inset-0 z-0 will-change-transform"
@@ -28,6 +29,7 @@ const Hero = () => {
                     alt="Wedding Photography Background"
                     className="h-full w-full object-cover"
                 />
+
                 <div className="from-background via-background to-background/10 dark:from-background dark:via-background dark:to-background/10 absolute inset-0 bg-linear-to-t from-10% via-30% to-90%" />
             </MotionInView>
 
@@ -107,7 +109,7 @@ const Hero = () => {
                     </MotionInView>
                 </div>
             </div>
-        </section>
+        </MotionSection>
     )
 }
 

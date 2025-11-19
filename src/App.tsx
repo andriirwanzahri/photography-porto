@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router'
 import { lazy, Suspense } from 'react'
-import 'react-loading-skeleton/dist/skeleton.css'
 
 // Skeletons
 import HeroSkeleton from './components/skeletons/HeroSkeleton'
@@ -12,7 +11,9 @@ const About = lazy(() => import('./pages/About'))
 const Services = lazy(() => import('./pages/Services'))
 const Booking = lazy(() => import('./pages/Booking'))
 const ClientDetail = lazy(() => import('./pages/ClientDetail'))
-const NotFound = lazy(() => import('./pages/NotFound'))
+import NotFound from './pages/NotFound'
+import GallerySkeleton from './components/skeletons/GallerySkeleton'
+// import Skeleton from 'react-loading-skeleton'
 
 function App() {
     return (
@@ -29,7 +30,7 @@ function App() {
                 <Route
                     path="/gallery"
                     element={
-                        <Suspense fallback={<HeroSkeleton />}>
+                        <Suspense fallback={<GallerySkeleton />}>
                             <Gallery />
                         </Suspense>
                     }
@@ -68,6 +69,7 @@ function App() {
                 />
                 <Route path="*" element={<NotFound />} />
             </Routes>
+            {/* <HeroSkeleton /> */}
         </div>
     )
 }

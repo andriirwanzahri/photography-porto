@@ -59,7 +59,38 @@
       "couple": "Rizky & Wulan",
       "location": "Langsa, Aceh, Indonesia",
       "image": "/images/gallery/04.jpg"
+    },
+    {
+      "id": 7,
+      "category": "Prewedding",
+      "title": "Sari & Dedi",
+      "subtitle": "Romantic Beach Vibes",
+      "date": "5 November 2024",
+      "couple": "Sari & Dedi",
+      "location": "Sabang, Aceh, Indonesia",
+      "image": "/images/gallery/05.jpg"
+    },
+    {
+      "id": 8,
+      "category": "Wedding",
+      "title": "Lina & Arif",
+      "subtitle": "Elegant Wedding Celebration",
+      "date": "30 Oktober 2024",
+      "couple": "Lina & Arif",
+      "location": "Meulaboh, Aceh, Indonesia",
+      "image": "/images/gallery/02.jpg"
+    },
+    {
+      "id": 9,
+      "category": "Engagement",
+      "title": "Tina & Budi",
+      "subtitle": "Sunset Engagement Session",
+      "date": "22 Agustus 2024",
+      "couple": "Tina & Budi",
+      "location": "Bireuen, Aceh, Indonesia",
+      "image": "/images/gallery/02.jpg"
     }
+
   ],
 
   "FaqData": [

@@ -1,10 +1,15 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router'
-import './index.css'
-import App from './App.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+// Css imports
+import 'react-loading-skeleton/dist/skeleton.css'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import './index.css'
+
+import App from './App.tsx'
 
 const queryClient = new QueryClient()
 // This code is only for TypeScript
