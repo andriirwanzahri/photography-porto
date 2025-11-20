@@ -6,7 +6,7 @@ import { fadeIn, fadeUp, staggerContainer } from '@/utils/variantsMotion'
 import { useQuery } from '@tanstack/react-query'
 import { faqData } from '@/services/faqData'
 import type { IFaqProps } from '@/index'
-import HeroSkeleton from '@/components/skeletons/HeroSkeleton'
+import Skeleton from 'react-loading-skeleton'
 
 function FaqSection() {
     const {
@@ -17,9 +17,6 @@ function FaqSection() {
         queryKey: ['FaqData'],
         queryFn: faqData,
     })
-
-    if (isPending) return <div>Loading...</div>
-    if (error) return <div>Error loading data</div>
 
     return (
         <MotionSection className="bg-secondary relative mx-auto overflow-hidden py-20 md:py-28">
@@ -45,8 +42,22 @@ function FaqSection() {
 
                 {/* Accordion component  */}
 
-                {isPending ? (
-                    <HeroSkeleton />
+                {error ? (
+                    <MotionSection>
+                        <div className="py-10 text-center text-red-500">
+                            {error.message}
+                        </div>
+                    </MotionSection>
+                ) : isPending ? (
+                    // <HeroSkeleton />
+                    <div className="container ml-28 gap-4 space-y-9">
+                        <Skeleton height={60} width="80%" />
+                        <Skeleton height={60} width="80%" />
+                        <Skeleton height={60} width="80%" />
+                        <Skeleton height={60} width="80%" />
+                        <Skeleton height={60} width="80%" />
+                        <Skeleton height={60} width="80%" />
+                    </div>
                 ) : (
                     Faqs.map((faq: IFaqProps, i: number) => (
                         <MotionInView

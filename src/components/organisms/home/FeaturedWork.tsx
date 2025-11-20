@@ -8,7 +8,8 @@ import { useQuery } from '@tanstack/react-query'
 import { getDataGallery } from '@/services/getDataGallery'
 import CardImage from '@/components/molecules/CardImage'
 import type { IGalleryProps } from '@/index'
-import HeroSkeleton from '@/components/skeletons/HeroSkeleton'
+
+import CardImageSkeleton from '@/components/skeletons/CardImageSkeleton'
 function FeaturedWork() {
     const {
         data: galleryData,
@@ -18,10 +19,6 @@ function FeaturedWork() {
         queryKey: ['galleryData'],
         queryFn: getDataGallery,
     })
-
-    if (error) {
-        return <div>Error loading gallery data</div>
-    }
 
     return (
         <MotionSection>
@@ -43,8 +40,16 @@ function FeaturedWork() {
                     variants={staggerContainer}
                     className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
                 >
-                    {isPending ? (
-                        <HeroSkeleton />
+                    {error ? (
+                        <MotionInView>
+                            <div className="py-10 text-center text-red-500">
+                                {error.message}
+                            </div>
+                        </MotionInView>
+                    ) : isPending ? (
+                        [...Array(6)].map((_, index) => (
+                            <CardImageSkeleton key={index} />
+                        ))
                     ) : (
                         galleryData.map((gallery: IGalleryProps) => (
                             <CardImage key={gallery.id} {...gallery} />
