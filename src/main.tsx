@@ -10,6 +10,8 @@ import 'react-lazy-load-image-component/src/effects/blur.css'
 import './index.css'
 
 import App from './App.tsx'
+import { store } from '@/stores/store.ts'
+import { Provider } from 'react-redux'
 
 const queryClient = new QueryClient()
 // This code is only for TypeScript
@@ -26,7 +28,9 @@ createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <BrowserRouter>
             <QueryClientProvider client={queryClient}>
-                <App />
+                <Provider store={store}>
+                    <App />
+                </Provider>
                 <ReactQueryDevtools initialIsOpen={false} />
             </QueryClientProvider>
         </BrowserRouter>

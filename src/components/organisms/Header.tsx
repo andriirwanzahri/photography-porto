@@ -4,9 +4,11 @@ import { Logo } from '../atoms/Logo'
 import ThemeToggle from '../atoms/ThemeToggle'
 import { Menu } from 'lucide-react'
 import { useState } from 'react'
+import useThemeToggle from '@/hook/useThemeToggle'
 
 function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    useThemeToggle()
 
     return (
         <>
