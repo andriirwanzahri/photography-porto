@@ -15,6 +15,8 @@ function CardImage({ id, title, image, category, location }: IGalleryProps) {
             <LazyLoadImage
                 src={image}
                 alt={title}
+                loading="lazy"
+                effect="black-and-white"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
