@@ -84,7 +84,7 @@ const Testimoni = () => {
                 </MotionP>
                 <MotionInView
                     variants={staggerContainer}
-                    className="mx-auto mt-10 flex items-center justify-center"
+                    className="mx-auto mt-10 flex items-center justify-center lg:container"
                 >
                     <div className="mx-auto flex h-full w-full flex-col items-center">
                         <Carousel setApi={setApi} className="h-full w-full">
@@ -92,21 +92,21 @@ const Testimoni = () => {
                                 {Array.from({ length: 5 }).map((_, index) => (
                                     <CarouselItem
                                         key={index}
-                                        className="basis-full"
+                                        className="basis-full px-8 py-8 md:px-8"
                                     >
-                                        <div className="flex w-full flex-col items-center gap-8 rounded-3xl border border-white/5 bg-[#111111] p-8 shadow-xl md:flex-row">
+                                        <div className="bg-secondary/40 border/5 flex w-full flex-col items-center gap-8 rounded-3xl border p-8 shadow-xl backdrop-blur-lg md:flex-row">
                                             {/* LEFT SIDE — PROFILE */}
                                             <div className="flex flex-col items-center text-center md:w-1/3">
                                                 {/* Foto Profile */}
                                                 <div className="relative">
                                                     <img
-                                                        src="/mnt/data/dc97cf17-cab5-41cb-a130-b2dc9193ef79.png"
+                                                        src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBob3RvfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
                                                         alt="client"
                                                         className="h-32 w-32 rounded-full border-4 border-white/10 object-cover shadow-lg"
                                                     />
 
                                                     {/* Rating */}
-                                                    <div className="absolute -bottom-2 left-1/2 flex -translate-x-1/2 gap-1 rounded-full border border-white/10 bg-black/40 px-3 py-1 backdrop-blur-lg">
+                                                    <div className="border-border bg-background absolute -bottom-2 left-1/2 flex -translate-x-1/2 gap-1 rounded-full border px-3 py-1 backdrop-blur-lg">
                                                         {Array.from({
                                                             length: 5,
                                                         }).map((_, i) => (
@@ -115,7 +115,7 @@ const Testimoni = () => {
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 viewBox="0 0 24 24"
                                                                 fill="currentColor"
-                                                                className="h-4 w-4 text-yellow-400 drop-shadow-md"
+                                                                className="text-accent h-4 w-4 drop-shadow-md"
                                                             >
                                                                 <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.728 1.48 8.121L12 18.896l-7.416 4.259 1.48-8.121L0 9.306l8.332-1.151z" />
                                                             </svg>
@@ -124,7 +124,7 @@ const Testimoni = () => {
                                                 </div>
 
                                                 {/* Nama & Role */}
-                                                <h3 className="mt-6 text-xl font-semibold text-white">
+                                                <h3 className="text-primary mt-6 text-xl font-semibold">
                                                     Mardian & Lisa
                                                 </h3>
                                                 <p className="text-sm text-gray-400">
@@ -151,7 +151,7 @@ const Testimoni = () => {
                                                 </svg>
 
                                                 {/* Text Testimonial */}
-                                                <p className="text-lg leading-relaxed font-light text-gray-300 italic">
+                                                <p className="text-secandary text-lg leading-relaxed font-light italic">
                                                     "Berkat PhotoGraphy, momen
                                                     engagement kami terabadikan
                                                     dengan sangat indah. Tim
