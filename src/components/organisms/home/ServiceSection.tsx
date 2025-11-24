@@ -4,36 +4,61 @@ import { fadeIn, fadeUp, staggerContainer } from '@/utils/variantsMotion'
 import MotionInView from '@/components/motion/MotionInView'
 import { MotionH1 } from '@/components/motion/MotionH1'
 import { MotionP } from '@/components/motion/MotionP'
-import { Camera, FileText, Image, MapPin } from 'lucide-react'
 import MotionSection from '@/components/motion/MotionSection'
-import Card from '@/components/molecules/Card'
+// import Card from '@/components/molecules/Card'
+import { PricingCard } from '@/components/molecules/PricingCard'
 
 const features = [
     {
         id: 1,
-        icon: <Camera className="text-primary h-10 w-10" />,
-        title: 'Unlimited Shoot',
-        description: 'Ambil foto sebanyak mungkin tanpa batasan.',
+        title: 'Engagement',
+        description:
+            'Abadikan momen spesial lamaran Anda dengan paket yang lengkap',
+        features: [
+            { icon: 'calendar', label: 'Unlimited shoot' },
+            { icon: 'image', label: 'Mini Album (40 lembar foto jumbo)' },
+            { icon: 'folder', label: 'Semua file dalam flashdisk' },
+        ],
+        popular: false,
     },
     {
         id: 2,
-        icon: <FileText className="text-primary h-10 w-10" />,
-        title: 'File Digital Lengkap',
+        title: 'Prewedding',
         description:
-            'Semua hasil foto diberikan dalam Flashdisk atau Google Drive.',
+            'Foto prewedding dengan konsep yang sesuai dengan karakter Anda',
+        features: [
+            { icon: 'calendar', label: 'Unlimited shoot' },
+            { icon: 'image', label: 'Album eksklusif & cetak jumbo' },
+            { icon: 'map-pin', label: '1-2 lokasi foto' },
+        ],
+        popular: true,
     },
     {
         id: 3,
-        icon: <Image className="text-primary h-10 w-10" />,
-        title: 'Album Eksklusif',
+        title: 'Wedding',
         description:
-            'Pilihan cetak dengan mini album, fullpress album, dan frame premium.',
+            'Dokumentasikan pernikahan Anda dengan sentuhan profesional',
+        features: [
+            { icon: 'calendar', label: 'Unlimited shoot' },
+            { icon: 'image', label: '80 - 120 lembar foto jumbo' },
+            {
+                icon: 'gallery-horizontal',
+                label: 'Album eksklusif + frame premium',
+            },
+        ],
+        popular: false,
     },
     {
         id: 4,
-        icon: <MapPin className="text-primary h-10 w-10" />,
-        title: 'Lokasi Fleksibel',
-        description: 'Bisa memilih 1 atau lebih lokasi untuk pemotretan.',
+        title: 'Spesial Package',
+        description:
+            'Paket lengkap untuk dokumentasi wedding dan ngunduh mantu',
+        features: [
+            { icon: 'camera', label: 'Foto wedding + ngunduh' },
+            { icon: 'image-play', label: '16-24 inch 2 pcs + frame' },
+            { icon: 'infinity', label: 'Unlimited shoot & fullpress album' },
+        ],
+        popular: false,
     },
 ]
 
@@ -62,8 +87,15 @@ function ServicesSection() {
                 </MotionInView>
 
                 <MotionInView className="mt-24 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-                    {features.map((feature, i) => (
-                        <Card key={i} {...feature} />
+                    {features.map((feature) => (
+                        <PricingCard
+                            key={feature.id}
+                            title={feature.title}
+                            description={feature.description}
+                            features={feature.features}
+                            popular={feature.popular}
+                        />
+                        // <Card key={i} {...feature} />
                     ))}
                 </MotionInView>
             </MotionInView>

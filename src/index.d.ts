@@ -16,10 +16,10 @@ export interface IFaqProps {
 }
 
 export interface IFeatureProps {
-    id:number
-    icon: JSX.Element
+    id: number
+    icon?: JSX.Element
     title: string
-    description: string
+    description?: string
+    className?: string
+    feature?: { icon: string; label: string }[]
 }
-
-
