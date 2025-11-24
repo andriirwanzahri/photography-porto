@@ -101,16 +101,11 @@ function AboutIntro() {
                 {/* // video document tasi */}
                 <MotionInView
                     variants={slideInLeft}
-                    className="aspect-4/5 max-h-[350px] w-full max-w-[650px] overflow-hidden rounded-lg"
+                    className="aspect-auto max-h-11/12 w-full overflow-hidden rounded-lg"
                 >
-                    {/* <img
-                        src={HeroImage}
-                        alt="Wedding Photography Background"
-                        className="h-full w-full object-cover"
-                    /> */}
                     <LazyLoadImage
                         src={HeroImage}
-                        alt="Wedding Photography Background"
+                        alt="Profile Photography"
                         className="h-full w-full object-cover"
                         effect="blur"
                     />

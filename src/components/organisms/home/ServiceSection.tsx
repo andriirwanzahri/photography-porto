@@ -97,6 +97,7 @@ function ServicesSection() {
                     {features.map((feature) => (
                         <PricingCard
                             key={feature.id}
+                            id={feature.id}
                             title={feature.title}
                             description={feature.description}
                             features={feature.features}

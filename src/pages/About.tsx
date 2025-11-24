@@ -1,5 +1,11 @@
+import MainTemplate from '@/components/templates/MainTemplate'
+
 function About() {
-    return <h1>About</h1>
+    return (
+        <MainTemplate>
+            <div>About Page</div>
+        </MainTemplate>
+    )
 }
 
 export default About
