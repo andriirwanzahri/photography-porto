@@ -42,7 +42,7 @@ function FeaturedWork() {
                 >
                     {error ? (
                         <MotionInView>
-                            <div className="py-10 text-center text-red-500">
+                            <div className="flex items-center py-10 text-center text-red-500">
                                 {error.message}
                             </div>
                         </MotionInView>

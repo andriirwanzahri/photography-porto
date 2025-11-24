@@ -1,23 +1,30 @@
 import { fadeIn, fadeUp, staggerContainer } from '@/utils/variantsMotion'
 
-// import HeroImage from '@/assets/01.jpg'
 import MotionInView from '@/components/motion/MotionInView'
 import { MotionH1 } from '@/components/motion/MotionH1'
 import { MotionP } from '@/components/motion/MotionP'
 import MotionSection from '@/components/motion/MotionSection'
-// import Card from '@/components/molecules/Card'
 import { PricingCard } from '@/components/molecules/PricingCard'
+import type { IconKeys } from '@/index'
 
-const features = [
+interface IFeaturesDummy {
+    id: number
+    title: string
+    description: string
+    features: { icon: IconKeys; label: string }[]
+    popular: boolean
+}
+
+const features: IFeaturesDummy[] = [
     {
         id: 1,
         title: 'Engagement',
         description:
             'Abadikan momen spesial lamaran Anda dengan paket yang lengkap',
         features: [
-            { icon: 'calendar', label: 'Unlimited shoot' },
-            { icon: 'image', label: 'Mini Album (40 lembar foto jumbo)' },
-            { icon: 'folder', label: 'Semua file dalam flashdisk' },
+            { icon: 'Calendar', label: 'Unlimited shoot' },
+            { icon: 'Image', label: 'Mini Album (40 lembar foto jumbo)' },
+            { icon: 'Folder', label: 'Semua file dalam flashdisk' },
         ],
         popular: false,
     },
@@ -27,9 +34,9 @@ const features = [
         description:
             'Foto prewedding dengan konsep yang sesuai dengan karakter Anda',
         features: [
-            { icon: 'calendar', label: 'Unlimited shoot' },
-            { icon: 'image', label: 'Album eksklusif & cetak jumbo' },
-            { icon: 'map-pin', label: '1-2 lokasi foto' },
+            { icon: 'Calendar', label: 'Unlimited shoot' },
+            { icon: 'Image', label: 'Album eksklusif & cetak jumbo' },
+            { icon: 'MapPin', label: '1-2 lokasi foto' },
         ],
         popular: true,
     },
@@ -39,10 +46,10 @@ const features = [
         description:
             'Dokumentasikan pernikahan Anda dengan sentuhan profesional',
         features: [
-            { icon: 'calendar', label: 'Unlimited shoot' },
-            { icon: 'image', label: '80 - 120 lembar foto jumbo' },
+            { icon: 'Calendar', label: 'Unlimited shoot' },
+            { icon: 'Image', label: '80 - 120 lembar foto jumbo' },
             {
-                icon: 'gallery-horizontal',
+                icon: 'GalleryHorizontal',
                 label: 'Album eksklusif + frame premium',
             },
         ],
@@ -54,9 +61,9 @@ const features = [
         description:
             'Paket lengkap untuk dokumentasi wedding dan ngunduh mantu',
         features: [
-            { icon: 'camera', label: 'Foto wedding + ngunduh' },
-            { icon: 'image-play', label: '16-24 inch 2 pcs + frame' },
-            { icon: 'infinity', label: 'Unlimited shoot & fullpress album' },
+            { icon: 'Camera', label: 'Foto wedding + ngunduh' },
+            { icon: 'ImagePlay', label: '16-24 inch 2 pcs + frame' },
+            { icon: 'Infinity', label: 'Unlimited shoot & fullpress album' },
         ],
         popular: false,
     },
@@ -95,7 +102,6 @@ function ServicesSection() {
                             features={feature.features}
                             popular={feature.popular}
                         />
-                        // <Card key={i} {...feature} />
                     ))}
                 </MotionInView>
             </MotionInView>

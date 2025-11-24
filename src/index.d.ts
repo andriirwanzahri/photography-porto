@@ -1,3 +1,5 @@
+import type { LucideIcon } from 'lucide-react'
+
 export interface IGalleryProps {
     id: number
     title: string
@@ -23,3 +25,8 @@ export interface IFeatureProps {
     className?: string
     feature?: { icon: string; label: string }[]
 }
+
+// TYPE
+export type IconKeys = {
+    [K in keyof typeof Icons]: (typeof Icons)[K] extends LucideIcon ? K : never
+}[keyof typeof Icons]

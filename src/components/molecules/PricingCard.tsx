@@ -1,9 +1,12 @@
 import { FeatureItem } from '@/components/atoms/FeatureItem'
 
+import { Button } from '../atoms/button/Button'
+import type { IconKeys } from '@/index'
+
 interface PricingCardProps {
     title: string
     description: string
-    features: { icon: string; label: string }[]
+    features: { icon: IconKeys; label: string }[]
     popular?: boolean
 }
 
@@ -14,15 +17,15 @@ export function PricingCard({
     popular = false,
 }: PricingCardProps) {
     return (
-        <div className="relative rounded-xl border border-white/5 bg-[#1f1f1f] p-6 shadow-lg">
+        <div className="border-border bg-background relative flex flex-col justify-between border p-6 shadow-lg">
             {popular && (
-                <span className="absolute top-4 right-4 rounded-md bg-gray-200 px-3 py-1 text-xs font-bold text-black shadow">
+                <span className="bg-secondary-foreground text-secondary absolute top-4 right-4 rounded-md px-3 py-1 text-xs font-bold shadow">
                     POPULAR
                 </span>
             )}
 
-            <h2 className="text-2xl font-semibold text-white">{title}</h2>
-            <p className="mt-2 text-gray-400">{description}</p>
+            <h2 className="text-primary text-2xl font-semibold">{title}</h2>
+            <p className="text-primary/70 mt-2">{description}</p>
 
             <div className="mt-6 space-y-3">
                 {features.map((f, i) => (
@@ -30,9 +33,9 @@ export function PricingCard({
                 ))}
             </div>
 
-            <button className="mt-6 w-full rounded-lg border border-gray-500 py-2 text-center text-white transition hover:bg-white hover:text-black">
+            <Button className="border-border hover:bg- mt-6 w-full rounded-lg border py-2 text-center transition">
                 Pilih Paket
-            </button>
+            </Button>
         </div>
     )
 }
