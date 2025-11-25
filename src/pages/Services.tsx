@@ -1,5 +1,11 @@
+import MainTemplate from '@/components/templates/MainTemplate'
+
 function Services() {
-  return <h1>Services</h1>;
+    return (
+        <MainTemplate>
+            <div>Services Page</div>
+        </MainTemplate>
+    )
 }
 
-export default Services;
+export default Services
