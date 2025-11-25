@@ -2,13 +2,52 @@ import MainTemplate from '@/components/templates/MainTemplate'
 import HeroImage from '@/assets/01.jpg'
 import { fadeIn, fadeUp, staggerContainer } from '@/utils/variantsMotion'
 import MotionInView from '@/components/motion/MotionInView'
-import { Button } from '@/components/atoms/button/Button'
+import { useQuery } from '@tanstack/react-query'
 import { MotionH1 } from '@/components/motion/MotionH1'
 import { MotionP } from '@/components/motion/MotionP'
+import { getDataGallery } from '@/services/getDataGallery'
+import CardImageSkeleton from '@/components/skeletons/CardImageSkeleton'
+import type { IGalleryProps } from '@/index'
+import CardImage from '@/components/molecules/CardImage'
+import { useState, useMemo } from 'react'
+import { Button } from '@/components/atoms/button/Button'
 
 function Gallery() {
+    const [getCategoryPhoto, setGetCategoryPhoto] = useState('all')
+
+    // Normalized categories (lowercase)
+
+    const {
+        data: galleryData = [],
+        isPending,
+        error,
+    } = useQuery({
+        queryKey: ['galleryData'],
+        queryFn: getDataGallery,
+    })
+
+    const categories = [
+        'all',
+        'wedding',
+        'engagement',
+        'prewedding',
+        'product',
+        'event',
+    ]
+
+    // Efficient filtering
+    const filterGallery = useMemo(() => {
+        if (getCategoryPhoto === 'all') return galleryData
+
+        return galleryData.filter(
+            (gallery: IGalleryProps) =>
+                gallery.category?.toLowerCase() === getCategoryPhoto
+        )
+    }, [galleryData, getCategoryPhoto])
+
     return (
         <MainTemplate>
+            {/* HERO SECTION */}
             <div className="relative h-[30vh] overflow-hidden">
                 <div className="absolute inset-0">
                     <img
@@ -16,8 +55,9 @@ function Gallery() {
                         alt="COVER"
                         className="h-full w-full object-cover"
                     />
-                    <div className="to-background via-background/80 from-background/60 absolute inset-0 bg-linear-to-b"></div>
+                    <div className="from-background/60 via-background/80 to-background absolute inset-0 bg-linear-to-b"></div>
                 </div>
+
                 <div className="relative flex h-full items-center">
                     <div className="container pb-12">
                         <MotionInView
@@ -40,18 +80,56 @@ function Gallery() {
                     </div>
                 </div>
             </div>
-            <div className="container mx-auto items-center px-20 pt-[-20px]">
-                <div className="flex flex-wrap justify-center gap-4 rounded-2xl bg-gray-100 p-5 shadow-xl inset-shadow-2xs">
-                    <Button variant={'default'} className="capitalis">
-                        Wedding
-                    </Button>
-                    <Button variant={'outline'} className="capitalis">
-                        Wedding
-                    </Button>
+
+            {/* CATEGORY BUTTONS */}
+            <div className="container mx-auto px-4 pb-20">
+                <div className="mb-8 flex flex-wrap justify-center gap-2">
+                    {categories.map((category) => (
+                        <Button
+                            key={category}
+                            variant={
+                                getCategoryPhoto === category
+                                    ? 'default'
+                                    : 'outline'
+                            }
+                            onClick={() => setGetCategoryPhoto(category)}
+                            className="capitalize"
+                        >
+                            {category}
+                        </Button>
+                    ))}
                 </div>
             </div>
+
+            {/* CONTENT GRID */}
             <div className="container grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <h1>12</h1>
+                {/* ERROR STATE */}
+                {error && (
+                    <div className="col-span-full py-10 text-center text-red-500">
+                        {error.message}
+                    </div>
+                )}
+
+                {/* LOADING STATE */}
+                {isPending &&
+                    [...Array(6)].map((_, index) => (
+                        <CardImageSkeleton key={index} />
+                    ))}
+
+                {/* EMPTY STATE */}
+                {!isPending && !error && filterGallery.length === 0 && (
+                    <div className="text-primary col-span-full py-10 text-center">
+                        No data to show at the moment
+                    </div>
+                )}
+
+                {/* DATA RENDER */}
+                {!isPending &&
+                    !error &&
+                    filterGallery.length > 0 &&
+                    filterGallery.map((gallery: IGalleryProps) => (
+                        <CardImage key={gallery.id} {...gallery} />
+                    ))}
             </div>
         </MainTemplate>
     )
