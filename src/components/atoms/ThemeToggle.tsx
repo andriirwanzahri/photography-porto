@@ -1,6 +1,7 @@
 import { Moon, Sun } from 'lucide-react'
-import { useAppSelector, useAppDispatch } from '@/stores/useReduxHook' // Import hooks Redux kita
+import { useAppSelector, useAppDispatch } from '@/stores/useReduxHook' // Import hooks Redux
 import { toggleTheme } from '@/stores/themeSlice' // Import action kita
+import { Button } from './button/Button'
 
 function ThemeToggle() {
     // 1. Ambil tema saat ini dari Redux store
@@ -13,13 +14,17 @@ function ThemeToggle() {
     }
 
     return (
-        <button onClick={handleToggle} className="h-9 w-9">
+        <Button
+            variant="ghost"
+            onClick={handleToggle}
+            className="h-9 w-9 rounded-full"
+        >
             {theme === 'dark' ? (
                 <Sun className="h-5 w-5" />
             ) : (
                 <Moon className="h-5 w-5" />
             )}
-        </button>
+        </Button>
     )
 }
 
