@@ -1,26 +1,75 @@
 import { Route, Routes } from 'react-router'
+import { lazy, Suspense } from 'react'
+
+// Skeletons
+import HeroSkeleton from './components/skeletons/HeroSkeleton'
 
 // pages imports
-import Home from './pages/Home'
-import Gallery from './pages/Gallery'
-import About from './pages/About'
-import Services from './pages/Services'
-import Booking from './pages/Booking'
-import ClientDetail from './pages/ClientDetail'
+const Home = lazy(() => import('./pages/Home'))
+const Gallery = lazy(() => import('./pages/Gallery'))
+const About = lazy(() => import('./pages/About'))
+const Services = lazy(() => import('./pages/Services'))
+const Booking = lazy(() => import('./pages/Booking'))
+const ClientDetail = lazy(() => import('./pages/ClientDetail'))
 import NotFound from './pages/NotFound'
+import GallerySkeleton from './components/skeletons/GallerySkeleton'
+// import Skeleton from 'react-loading-skeleton'
 
 function App() {
     return (
         <div className="[&::-webkit-scrollbar-thumb]:bg-secondary-foreground max-h-screen overflow-y-auto [&::-webkit-scrollbar]:w-2 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-track]:bg-gray-100 dark:[&::-webkit-scrollbar-track]:bg-neutral-700">
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/gallery" element={<Gallery />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/booking" element={<Booking />} />
-                <Route path="/client/:clientName" element={<ClientDetail />} />
+                <Route
+                    path="/"
+                    element={
+                        <Suspense fallback={<HeroSkeleton />}>
+                            <Home />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="/gallery"
+                    element={
+                        <Suspense fallback={<GallerySkeleton />}>
+                            <Gallery />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="/about"
+                    element={
+                        <Suspense fallback={<HeroSkeleton />}>
+                            <About />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="/services"
+                    element={
+                        <Suspense fallback={<HeroSkeleton />}>
+                            <Services />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="/booking"
+                    element={
+                        <Suspense fallback={<HeroSkeleton />}>
+                            <Booking />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path="/client/:clientName"
+                    element={
+                        <Suspense fallback={<HeroSkeleton />}>
+                            <ClientDetail />
+                        </Suspense>
+                    }
+                />
                 <Route path="*" element={<NotFound />} />
             </Routes>
+            {/* <HeroSkeleton /> */}
         </div>
     )
 }

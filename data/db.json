@@ -1,0 +1,129 @@
+{
+  "galleryData": [
+    {
+      "id": 1,
+      "category": "Wedding",
+      "title": "Nia & Yusda",
+      "subtitle": "Wedding Day, After Akad",
+      "date": "18 Januari 2025",
+      "couple": "Nia & Yusda",
+      "location": "Panton Labu, Aceh, Indonesia",
+      "image": "/images/gallery/03.jpg"
+    },
+    {
+      "id": 2,
+      "category": "Prewedding",
+      "title": "Nazira & Rahmad",
+      "subtitle": "Prewedding",
+      "date": "7 Januari 2025",
+      "couple": "Nazira & Rahmad",
+      "location": "Panton Labu, Aceh, Indonesia",
+      "image": "/images/gallery/02.jpg"
+    },
+    {
+      "id": 3,
+      "category": "Engagement",
+      "title": "Mardian & Lisa",
+      "subtitle": "Engagement",
+      "date": "16 Oktober 2023",
+      "couple": "Mardian & Lisa",
+      "location": "Panton Labu, Aceh, Indonesia",
+      "image": "/images/gallery/04.jpg"
+    },
+    {
+      "id": 4,
+      "category": "Prewedding",
+      "title": "Dian & Reza",
+      "subtitle": "Love in the City Lights",
+      "date": "20 Februari 2025",
+      "couple": "Dian & Reza",
+      "location": "Banda Aceh, Indonesia",
+      "image": "/images/gallery/05.jpg"
+    },
+    {
+      "id": 5,
+      "category": "Wedding",
+      "title": "Ayu & Fajar",
+      "subtitle": "Traditional Wedding Day",
+      "date": "25 Desember 2024",
+      "couple": "Ayu & Fajar",
+      "location": "Lhokseumawe, Aceh, Indonesia",
+      "image": "/images/gallery/03.jpg"
+    },
+    {
+      "id": 6,
+      "category": "Engagement",
+      "title": "Rizky & Wulan",
+      "subtitle": "Engagement Ceremony",
+      "date": "12 September 2024",
+      "couple": "Rizky & Wulan",
+      "location": "Langsa, Aceh, Indonesia",
+      "image": "/images/gallery/04.jpg"
+    },
+    {
+      "id": 7,
+      "category": "Prewedding",
+      "title": "Sari & Dedi",
+      "subtitle": "Romantic Beach Vibes",
+      "date": "5 November 2024",
+      "couple": "Sari & Dedi",
+      "location": "Sabang, Aceh, Indonesia",
+      "image": "/images/gallery/05.jpg"
+    },
+    {
+      "id": 8,
+      "category": "Wedding",
+      "title": "Lina & Arif",
+      "subtitle": "Elegant Wedding Celebration",
+      "date": "30 Oktober 2024",
+      "couple": "Lina & Arif",
+      "location": "Meulaboh, Aceh, Indonesia",
+      "image": "/images/gallery/02.jpg"
+    },
+    {
+      "id": 9,
+      "category": "Engagement",
+      "title": "Tina & Budi",
+      "subtitle": "Sunset Engagement Session",
+      "date": "22 Agustus 2024",
+      "couple": "Tina & Budi",
+      "location": "Bireuen, Aceh, Indonesia",
+      "image": "/images/gallery/02.jpg"
+    }
+
+  ],
+
+  "FaqData": [
+  {
+    "id": "1",
+    "question": "Apakah saya bisa memilih lokasi sendiri untuk pemotretan?",
+    "answer": "Ya, Anda bisa memilih lokasi yang diinginkan. Jika membutuhkan rekomendasi, tim kami siap membantu memberikan saran lokasi yang sesuai dengan konsep pemotretan Anda."
+  },
+  {
+    "id": "2",
+    "question": "Apakah ada batasan jumlah foto yang bisa diambil?",
+    "answer": "Tidak ada batasan, karena semua paket yang kami tawarkan memiliki fitur unlimited shoot. Kami akan mengambil sebanyak mungkin foto untuk memastikan Anda mendapatkan hasil terbaik."
+  },
+  {
+    "id": "3",
+    "question": "Bagaimana cara mendapatkan file hasil foto?",
+    "answer": "Semua file hasil foto akan diberikan dalam bentuk digital melalui flashdisk atau Google Drive sesuai dengan preferensi Anda. Kami juga menyediakan opsi cetak foto dalam berbagai format."
+  },
+  {
+    "id": "4",
+    "question": "Apakah bisa mencetak foto dalam ukuran besar?",
+    "answer": "Ya, tersedia opsi cetak dengan berbagai ukuran mulai dari ukuran A4 hingga 24 inch dengan frame eksklusif. Kami menggunakan kertas foto premium untuk memastikan kualitas cetak terbaik."
+  },
+  {
+    "id": "5",
+    "question": "Berapa lama waktu yang dibutuhkan untuk mendapatkan hasil foto?",
+    "answer": "Untuk foto engagement dan prewedding, hasil editing akan selesai dalam 1-2 minggu. Untuk foto wedding, hasil akan selesai dalam 2-3 minggu tergantung jumlah foto yang diambil."
+  },
+  {
+    "id": 6,
+    "question": "Apakah fotografer bisa datang ke luar kota?",
+    "answer": "Ya, tim kami dapat melakukan pemotretan di luar kota dengan biaya tambahan untuk transportasi dan akomodasi yang akan disesuaikan dengan lokasi pemotretan."
+  }
+]
+
+}
