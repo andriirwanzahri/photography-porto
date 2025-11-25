@@ -1,8 +1,10 @@
 import MainTemplate from '@/components/templates/MainTemplate'
 import HeroImage from '@/assets/01.jpg'
-import { visibleVariansFadeIn } from '@/utils/variantsMotion'
+import { fadeIn, fadeUp, staggerContainer } from '@/utils/variantsMotion'
 import MotionInView from '@/components/motion/MotionInView'
 import { Button } from '@/components/atoms/button/Button'
+import { MotionH1 } from '@/components/motion/MotionH1'
+import { MotionP } from '@/components/motion/MotionP'
 
 function Gallery() {
     return (
@@ -19,17 +21,20 @@ function Gallery() {
                 <div className="relative flex h-full items-center">
                     <div className="container pb-12">
                         <MotionInView
-                            variants={visibleVariansFadeIn}
+                            variants={staggerContainer}
                             className="text-center"
                         >
-                            <h1 className="text-primary mb-4 font-serif text-5xl font-bold md:text-6xl">
+                            <MotionH1
+                                variants={fadeUp}
+                                className="text-primary mb-4 font-serif text-5xl font-bold md:text-6xl"
+                            >
                                 Gallery Photo
-                            </h1>
+                            </MotionH1>
                             <div className="text-primary/50 flex flex-wrap justify-center gap-4">
-                                <p className="text-2xl">
+                                <MotionP variants={fadeIn} className="text-2xl">
                                     Explore our collection of stunning
                                     photographs
-                                </p>
+                                </MotionP>
                             </div>
                         </MotionInView>
                     </div>
