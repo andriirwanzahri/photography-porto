@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router'
+import { BrowserRouter, Route, Routes } from 'react-router'
 import { lazy, Suspense } from 'react'
 
 // Skeletons
@@ -13,11 +13,13 @@ const Booking = lazy(() => import('./pages/Booking'))
 const ClientDetail = lazy(() => import('./pages/ClientDetail'))
 import NotFound from './pages/NotFound'
 import GallerySkeleton from './components/skeletons/GallerySkeleton'
-// import Skeleton from 'react-loading-skeleton'
+import ScrollToTop from './hook/ScrollToTop'
 
 function App() {
     return (
-        <div className="[&::-webkit-scrollbar-thumb]:bg-secondary-foreground max-h-screen overflow-y-auto [&::-webkit-scrollbar]:w-2 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-track]:bg-gray-100 dark:[&::-webkit-scrollbar-track]:bg-neutral-700">
+        // <div className="[&::-webkit-scrollbar-thumb]:bg-secondary-foreground overflow-y max-h-screen [&::-webkit-scrollbar]:w-2 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-track]:bg-gray-100 dark:[&::-webkit-scrollbar-track]:bg-neutral-700">
+        <BrowserRouter>
+            <ScrollToTop />
             <Routes>
                 <Route
                     path="/"
@@ -69,8 +71,8 @@ function App() {
                 />
                 <Route path="*" element={<NotFound />} />
             </Routes>
-            {/* <HeroSkeleton /> */}
-        </div>
+        </BrowserRouter>
+        // </div>
     )
 }
 

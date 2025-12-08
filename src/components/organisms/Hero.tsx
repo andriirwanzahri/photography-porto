@@ -3,7 +3,10 @@ import { MotionH1 } from '@/components/motion/MotionH1'
 import MotionInView from '@/components/motion/MotionInView'
 import { MotionP } from '@/components/motion/MotionP'
 import { fadeIn, fadeUp, staggerContainer } from '@/utils/variantsMotion'
-const Hero = () => {
+type HeroProps = {
+    clientName: string | undefined
+}
+const Hero = ({ clientName }: HeroProps) => {
     return (
         <div className="relative h-[50vh] overflow-hidden">
             <div className="absolute inset-0">
@@ -25,7 +28,7 @@ const Hero = () => {
                             variants={fadeUp}
                             className="text-primary mb-4 font-serif text-5xl font-bold md:text-6xl"
                         >
-                            Sari & Dedi
+                            {clientName}
                         </MotionH1>
                         <div className="text-primary/50 flex flex-wrap justify-center gap-4">
                             <MotionP variants={fadeIn} className="text-2xl">

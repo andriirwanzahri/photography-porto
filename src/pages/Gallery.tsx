@@ -102,7 +102,7 @@ function Gallery() {
             </div>
 
             {/* CONTENT GRID */}
-            <div className="container grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="container grid grid-cols-1 gap-6 pb-20 md:grid-cols-2 lg:grid-cols-3">
                 {/* ERROR STATE */}
                 {error && (
                     <div className="col-span-full py-10 text-center text-red-500">
