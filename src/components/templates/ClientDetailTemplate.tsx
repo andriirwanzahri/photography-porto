@@ -14,7 +14,7 @@ function ClientDetailTemplate({
 
     return (
         <div className="flex min-h-screen flex-col">
-            <header className="bg-background/40 absolute top-6 right-0 left-0 z-10 mx-4 flex items-center gap-4 rounded-full px-4 py-2 shadow-md backdrop-blur-md md:mx-8 lg:mx-16">
+            <header className="bg-background/40 absolute fixed top-6 left-0 z-10 mx-4 flex items-center gap-4 rounded-full px-4 py-2 shadow-md backdrop-blur-md md:mx-8 lg:mx-16">
                 <Button
                     variant="ghost"
                     size="icon"
