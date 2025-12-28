@@ -14,6 +14,7 @@ const ClientDetail = lazy(() => import('./pages/ClientDetail'))
 import NotFound from './pages/NotFound'
 import GallerySkeleton from './components/skeletons/GallerySkeleton'
 import ScrollToTop from './hook/ScrollToTop'
+import Login from './pages/Login'
 
 function App() {
     return (
@@ -69,6 +70,7 @@ function App() {
                         </Suspense>
                     }
                 />
+                <Route path="/login" element={<Login />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
