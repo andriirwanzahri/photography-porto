@@ -14,6 +14,7 @@ const navItems = [
 function Navigation() {
     const location = useLocation()
     const [user] = useAuthState(auth)
+    console.log(user?.displayName)
 
     return (
         <nav className="hidden items-center gap-8 md:flex">
@@ -35,7 +36,7 @@ function Navigation() {
             {user ? (
                 <>
                     <Button
-                        variant="ghost"
+                        variant="link"
                         onClick={async () => {
                             await auth.signOut()
                         }}
