@@ -26,6 +26,15 @@ export interface IFeatureProps {
     feature?: { icon: string; label: string }[]
 }
 
+export interface IUserProps {
+    uid: string
+    email: string | null
+    displayName?: string | null
+    photoURL?: string | null
+    role?: 'admin' | 'user'
+    isProfileComplete?: boolean
+}
+
 // TYPE
 export type IconKeys = {
     [K in keyof typeof Icons]: (typeof Icons)[K] extends LucideIcon ? K : never

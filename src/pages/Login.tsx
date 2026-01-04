@@ -1,29 +1,29 @@
-import { signInWithPopup } from 'firebase/auth'
-import { useAuthState } from 'react-firebase-hooks/auth'
-import { auth, googleProvider } from '@/services/firebase.ts'
-import { useEffect } from 'react'
+import { loginWithGoogle } from '@/stores/authThunk'
+import { useAppDispatch, useAppSelector } from '@/stores/useReduxHook'
+
 import { useNavigate } from 'react-router'
 import { Button } from '@/components/atoms/button/Button'
 import Input from '@/components/atoms/Input'
 import AuthTemplate from '@/components/templates/AuthTemplate'
 
 function Login() {
-    const [user] = useAuthState(auth)
+    const dispatch = useAppDispatch()
     const navigate = useNavigate()
+    const { loading } = useAppSelector((state) => state.auth)
+
     const signInWithGoogle = async () => {
         try {
-            await signInWithPopup(auth, googleProvider)
-        } catch (error) {
-            console.error('Error during sign in:', error)
+            const result = await dispatch(loginWithGoogle()).unwrap()
+
+            if (!result.isProfileComplete) {
+                navigate('/')
+            } else {
+                navigate(-1)
+            }
+        } catch (err) {
+            console.error('Failed to login with Google:', err)
         }
     }
-
-    useEffect(() => {
-        if (user) {
-            navigate('/')
-            console.log('Current user:', user)
-        }
-    }, [user, navigate])
 
     return (
         <AuthTemplate>
@@ -50,8 +50,12 @@ function Login() {
                 </Button>
             </form>
 
-            <Button variant="outline" onClick={signInWithGoogle}>
-                Sign In with Google
+            <Button
+                disabled={loading}
+                variant="outline"
+                onClick={signInWithGoogle}
+            >
+                {loading ? 'Signing in...' : 'Sign In with Google'}
             </Button>
         </AuthTemplate>
     )
