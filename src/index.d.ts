@@ -9,11 +9,11 @@ export interface IGalleryProps {
     category: string
     location: string
     image: string
-    slide?: number|string
+    slide?: number | string
 }
 
 export interface IFaqProps {
-    id: number
+    id: string
     question: string
     answer: string
 }
