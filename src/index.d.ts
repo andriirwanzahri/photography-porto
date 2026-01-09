@@ -1,7 +1,7 @@
 import type { LucideIcon } from 'lucide-react'
 
 export interface IGalleryProps {
-    id: number
+    id: string
     title: string
     subtitle: string
     date: string
@@ -9,6 +9,7 @@ export interface IGalleryProps {
     category: string
     location: string
     image: string
+    slide?: number|string
 }
 
 export interface IFaqProps {

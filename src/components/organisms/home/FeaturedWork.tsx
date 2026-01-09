@@ -51,9 +51,15 @@ function FeaturedWork() {
                             <CardImageSkeleton key={index} />
                         ))
                     ) : (
-                        galleryData.map((gallery: IGalleryProps) => (
-                            <CardImage key={gallery.id} {...gallery} />
-                        ))
+                        galleryData.map(
+                            (gallery: IGalleryProps, index: number) => (
+                                <CardImage
+                                    key={gallery.id}
+                                    slide={index}
+                                    {...gallery}
+                                />
+                            )
+                        )
                     )}
                 </MotionInView>
             </MotionInView>

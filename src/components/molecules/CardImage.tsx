@@ -3,18 +3,28 @@ import MotionInView from '../motion/MotionInView'
 import { Button } from '../atoms/button/Button'
 import { Link } from 'react-router'
 import type { IGalleryProps } from '@/index'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+// import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { Image } from '@imagekit/react'
 
-function CardImage({ id, title, image, category, location }: IGalleryProps) {
+function CardImage({ title, image, category, location, slide }: IGalleryProps) {
     return (
         <MotionInView
-            key={id}
-            variants={cardSlideInUp(id)}
+            variants={cardSlideInUp(slide as number)}
             className="group relative aspect-4/5 cursor-pointer overflow-hidden rounded-lg"
         >
-            <LazyLoadImage
+            {/* <LazyLoadImage
                 src={image}
                 alt={title}
+                loading="lazy"
+                effect="black-and-white"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            /> */}
+            <Image
+                urlEndpoint={import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT}
+                src={image}
+                alt={title}
+                width={400}
+                height={500}
                 loading="lazy"
                 effect="black-and-white"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"

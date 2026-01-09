@@ -7,6 +7,8 @@ import { Activity, useState } from 'react'
 import useThemeToggle from '@/hook/useThemeToggle'
 import { cn } from '@/utils/cn'
 import { Button } from '@/components/atoms/button/Button'
+import { CircleUser } from 'lucide-react'
+// import { seeder } from '@/services/seeder'
 
 const navItems = [
     { name: 'Home', path: '/' },
@@ -32,6 +34,9 @@ function Header() {
 
                 <div className="flex items-center gap-2">
                     <ThemeToggle />
+                    <Button variant="ghost" size="icon">
+                        <CircleUser className="h-5 w-5" />
+                    </Button>
                     <Button
                         variant="ghost"
                         size="icon"
@@ -40,6 +45,12 @@ function Header() {
                     >
                         <Menu className="h-5 w-5" />
                     </Button>
+                    {/* <button
+                        onClick={seeder}
+                        className="rounded bg-black px-4 py-2 text-white"
+                    >
+                        Upload Data ke Firestore
+                    </button> */}
                 </div>
             </div>
             <Activity mode={mobileMenuOpen ? 'visible' : 'hidden'}>

@@ -2,8 +2,6 @@ import { Link } from 'react-router'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { ArrowRight } from 'lucide-react'
 
-import HeroImage from '@/assets/01.jpg'
-import Profile from '@/assets/02.jpg'
 import { Button } from '@/components/atoms/button/Button'
 import MotionInView from '@/components/motion/MotionInView'
 import { MotionH1 } from '@/components/motion/MotionH1'
@@ -14,6 +12,7 @@ import {
 } from '@/utils/variantsMotion'
 import { MotionP } from '@/components/motion/MotionP'
 import MotionSection from '@/components/motion/MotionSection'
+import { Image } from '@imagekit/react'
 
 const Hero = () => {
     const { scrollY } = useScroll()
@@ -24,8 +23,11 @@ const Hero = () => {
                 style={{ y }}
                 className="absolute inset-0 z-0 will-change-transform"
             >
-                <img
-                    src={HeroImage}
+                <Image
+                    urlEndpoint={import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT}
+                    src="01.jpg"
+                    width={1920}
+                    height={1080}
                     alt="Wedding Photography Background"
                     className="h-full w-full object-cover"
                 />
@@ -99,8 +101,12 @@ const Hero = () => {
                                 }}
                                 className="shadow-elegant-lg h-72 w-52 overflow-hidden rounded-2xl sm:h-80 sm:w-64 md:h-96 md:w-80 lg:h-112 lg:w-88"
                             >
-                                <img
-                                    src={Profile}
+                                <Image
+                                    urlEndpoint={
+                                        import.meta.env
+                                            .VITE_IMAGEKIT_URL_ENDPOINT
+                                    }
+                                    src="02.jpg"
                                     alt="Professional Photographer Wedding"
                                     className="h-full w-full object-cover"
                                 />
