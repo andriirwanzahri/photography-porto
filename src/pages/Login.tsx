@@ -9,6 +9,7 @@ import AuthTemplate from '@/components/templates/AuthTemplate'
 
 import GoogleIcon from '@/assets/google.png'
 import Spinner from '@/components/atoms/Spinner'
+import toast from 'react-hot-toast'
 
 const url = import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT
 
@@ -23,6 +24,7 @@ function Login() {
 
             if (!result.isProfileComplete) {
                 navigate('/')
+                toast.success('Login successful! Please complete your profile.')
             } else {
                 navigate(-1)
             }
