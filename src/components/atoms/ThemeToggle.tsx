@@ -1,43 +1,30 @@
 import { Moon, Sun } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useAppSelector, useAppDispatch } from '@/stores/useReduxHook' // Import hooks Redux
+import { toggleTheme } from '@/stores/themeSlice' // Import action kita
+import { Button } from './button/Button'
 
 function ThemeToggle() {
-    const [theme, setTheme] = useState<string>(() => {
-        // Ambil tema dari localStorage atau deteksi OS
-        if (typeof window !== 'undefined') {
-            if (localStorage.theme === 'dark') return 'dark'
-            if (localStorage.theme === 'light') return 'light'
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-                return 'dark'
-        }
-        return 'light'
-    })
-
-    // Set kelas pada <html> saat theme berubah
-    useEffect(() => {
-        const root = window.document.documentElement
-        if (theme === 'dark') {
-            root.classList.add('dark')
-            localStorage.theme = 'dark'
-        } else {
-            root.classList.remove('dark')
-            localStorage.theme = 'light'
-        }
-    }, [theme])
-
-    // Fungsi toggle
-    const toggleTheme = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark')
+    // 1. Ambil tema saat ini dari Redux store
+    const theme = useAppSelector((state) => state.theme.currentTheme)
+    // 2. Dapatkan dispatch function
+    const dispatch = useAppDispatch()
+    // 3. Fungsi toggle sekarang hanya mendispatch action
+    const handleToggle = () => {
+        dispatch(toggleTheme())
     }
 
     return (
-        <button onClick={toggleTheme} className="h-9 w-9">
+        <Button
+            variant="ghost"
+            onClick={handleToggle}
+            className="h-9 w-9 rounded-full"
+        >
             {theme === 'dark' ? (
                 <Sun className="h-5 w-5" />
             ) : (
                 <Moon className="h-5 w-5" />
             )}
-        </button>
+        </Button>
     )
 }
 

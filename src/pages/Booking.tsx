@@ -1,5 +1,11 @@
+import MainTemplate from '@/components/templates/MainTemplate'
+
 function Booking() {
-  return <h1>Booking</h1>;
+    return (
+        <MainTemplate>
+            <div>Booking Page</div>
+        </MainTemplate>
+    )
 }
 
-export default Booking;
+export default Booking
